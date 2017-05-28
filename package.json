@@ -7,11 +7,16 @@
     "react-dom": "^15.5.4"
   },
   "devDependencies": {
-    "react-scripts": "1.0.7"
+    "npm-run-all": "^4.0.2",
+    "react-scripts": "1.0.7",
+    "stylus": "^0.54.5"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build-css": "stylus --hoist-atrules ./src/stylus -o ./src/styles",
+    "watch-css": "stylus --watch --hoist-atrules -m ./src/stylus -o ./src/styles",
+    "start-react": "react-scripts start",
+    "start": "npm-run-all -p watch-css start-react",
+    "build": "npm-run build-css && react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }
