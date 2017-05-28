@@ -1,0 +1,51 @@
+.header
+  width 100%
+  min-height 100vh
+  background-size cover
+  background-position center
+  background-repeat no-repeat
+
+  .navigation
+    padding-top 30px
+
+  .logo
+    span(1/5, middle)
+
+    +below(580px)
+      span(1/1)
+      text-align center
+
+  .menu
+    span(4/5, middle)
+    text-align right
+
+    +below(580px)
+      span(1/2, middle)
+      text-align center
+
+  .menu-item
+    display inline-block
+    vertical-align middle
+    margin-left 25px
+
+    +below(580px)
+      display block
+      margin-top 30px
+      margin-left 0
+  
+  .menu-link
+    font-size 16px
+    font-weight 400
+    color $white
+    text-transform uppercase
+
+  .title
+    font-size 40px
+    color $white
+    font-weight 300
+    margin-top 120px
+    margin-bottom 30px
+
+  .more
+    text-align center
+    padding-bottom 30px
