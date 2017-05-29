@@ -10,5 +10,4 @@ firebase.initializeApp({
   databaseURL: process.env.REACT_APP_FIREBASE_DATABASE
 })
 
-
 ReactDOM.render(<App />, document.getElementById('root'))

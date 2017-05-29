@@ -3,17 +3,21 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "google-map-react": "^0.24.0",
     "react": "^15.5.4",
     "react-dom": "^15.5.4"
   },
   "devDependencies": {
+    "firebase": "^4.0.0",
+    "gride": "^0.5.2",
     "npm-run-all": "^4.0.2",
     "react-scripts": "1.0.7",
+    "rupture": "^0.6.2",
     "stylus": "^0.54.5"
   },
   "scripts": {
-    "build-css": "stylus --hoist-atrules ./src/stylus -o ./src/styles",
-    "watch-css": "stylus --watch --hoist-atrules -m ./src/stylus -o ./src/styles",
+    "build-css": "stylus --hoist-atrules -u gride -u rupture ./src/stylus -o ./src/styles",
+    "watch-css": "stylus --watch --hoist-atrules -u gride -u rupture -m ./src/stylus -o ./src/styles",
     "start-react": "react-scripts start",
     "start": "npm-run-all -p watch-css start-react",
     "build": "npm-run build-css && react-scripts build",

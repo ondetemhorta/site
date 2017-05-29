@@ -1,11 +1,11 @@
-import react from 'react'
+import React from 'react'
 import ReactDOM from 'react-dom'
 
-import css from '../stylus/main.styl'
+import css from '../styles/main.css'
 
 import Header from './Header'
 import Filter from './Filter'
-import Map from './Map'
+import GardensMap from './GardensMap'
 import About from './About'
 import Questions from './Questions'
 import Contact from './Contact'
@@ -15,7 +15,7 @@ const App = props => (
   <div>
     <Header />
     <Filter />
-    <Map />
+    <GardensMap />
     <About />
     <Questions />
     <Contact />

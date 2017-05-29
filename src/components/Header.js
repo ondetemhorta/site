@@ -1,11 +1,10 @@
 import React from 'react'
 
 import Logo from '../images/logo.png'
-import Background from '../images/background.jpg'
 import Button from './utils/Button'
 
 const Header = () => (
-  <header id="header" className="header" style={style}>
+  <header id="header" className="header">
     <div className="">
       <nav className="navigation container" data-scroll-header>
         <div className="logo">
