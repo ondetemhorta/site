@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux'
-import { firebaseStateReducer as firebase } from 'react-redux-firebase'
+import { authReducer } from './authReducer'
 
 const reducers = combineReducers({
-  firebase
+  authReducer
 })
 
 export default reducers

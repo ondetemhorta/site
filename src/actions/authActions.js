@@ -5,7 +5,7 @@ import {
   SIGN_IN_ERROR,
   SIGN_IN_SUCCESS,
   SIGN_OUT_SUCCESS
-} from '../contants'
+} from '../constants'
 
 function authenticate(provider) {
   return dispatch => {

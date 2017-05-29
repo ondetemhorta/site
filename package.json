@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "google-map-react": "^0.24.0",
+    "immutable": "^3.8.1",
     "npm-run": "^4.1.2",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",

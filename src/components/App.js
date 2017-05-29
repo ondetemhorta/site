@@ -1,6 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { connect } from 'react-redux'
 import css from '../styles/main.css'
 
 import Header from './Header'
@@ -23,12 +22,4 @@ const App = props => (
   </div>
 )
 
-const mapStateToProps = () => ({
-
-})
-
-const mapDispatchToProps = () => ({
-
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(App)
+export default App
