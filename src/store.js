@@ -1,9 +1,11 @@
 import { createStore, applyMiddleware } from 'redux'
-import { reduxFirebase } from 'react-redux-firebase'
+
+import thunk from 'redux-thunk'
+import promise from 'redux-promise-middleware'
 import { createLogger } from 'redux-logger'
 
 import reducers from './reducers'
 
-const middlewares = applyMiddleware(promise(), createLogger())
+const middlewares = applyMiddleware(promise(), createLogger(), thunk)
 
 export default createStore(reducers, middlewares)

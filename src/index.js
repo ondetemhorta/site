@@ -1,13 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import firebase from 'firebase'
+import { Provider } from 'react-redux'
+import store from './store'
 
 import App from './components/App'
 
-firebase.initializeApp({
-  apiKey: process.env.REACT_APP_FIREBASE_KEY,
-  authDomain: process.env.REACT_APP_FIREBASE_DOMAIN,
-  databaseURL: process.env.REACT_APP_FIREBASE_DATABASE
-})
+const Main = (
+  <Provider store={store}>
+    <App />
+  </Provider>
+)
 
-ReactDOM.render(<App />, document.getElementById('root'))
+ReactDOM.render(Main, document.getElementById('root'))
