@@ -18,7 +18,7 @@ const Header = props => (
           <li className="menu-item"><a className="menu-link" data-scroll href="#about">Sobre</a></li>
           <li className="menu-item"><a className="menu-link" data-scroll href="#questions">Dúvidas</a></li>
           <li className="menu-item"><a className="menu-link" data-scroll href="#contact">Contato</a></li>
-          <li className="menu-item" onClick={props.signIn}><Button color="white" text="Cadastre sua horta" /></li>
+          <li className="menu-item" onClick={props.signIn}><a className="menu-register">Cadastre sua horta <i className="menu-register-icon fa fa-facebook"></i></a></li>
         </ul>
       </nav>
 

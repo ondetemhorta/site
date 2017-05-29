@@ -8,7 +8,11 @@
     "npm-run": "^4.1.2",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
-    "redux-promise-middleware": "^4.3.0"
+    "react-redux": "^5.0.5",
+    "redux": "^3.6.0",
+    "redux-logger": "^3.0.6",
+    "redux-promise-middleware": "^4.3.0",
+    "redux-thunk": "^2.2.0"
   },
   "devDependencies": {
     "firebase": "^4.0.0",
@@ -23,7 +27,7 @@
     "watch-css": "stylus --watch --hoist-atrules -u gride -u rupture -m ./src/stylus -o ./src/styles",
     "start-react": "react-scripts start",
     "start": "npm-run-all -p watch-css start-react",
-    "build": "npm-run build-css && react-scripts build",
+    "build": "npm run build-css && react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }
