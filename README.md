@@ -5,13 +5,15 @@
 ## Para desenvolvimento
 
 Instale as dependências
+
 ```sh
-npm i
+yarn
 ```
 
 Para abrir um servidor local rode o comando abaixo.
+
 ```sh
-npm start
+yarn start
 ```
 
 ## Licença
