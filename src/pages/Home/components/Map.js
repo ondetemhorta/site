@@ -56,7 +56,7 @@ export function Map({ gardens, fetch }) {
       <Mapping
         center={{ lat: -23.421, lng: -51.9331 }}
         zoomControl={false}
-        collapsed={true}
+        attributionControl={false}
         zoom={14}
       >
         <TileLayer url="https://{s}.tile.openstreetmap.se/hydda/full/{z}/{x}/{y}.png" />
