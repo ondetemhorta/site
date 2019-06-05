@@ -8,7 +8,7 @@ import { scroller } from 'react-scroll'
 
 import { Map as Mapeable, TileLayer, Marker } from 'react-leaflet'
 
-import { RideUp } from '../../../components'
+import { RideUp, Icon } from '../../../components'
 
 const Mapping = styled(Mapeable)`
   width: 100%;
@@ -26,7 +26,7 @@ const Container = styled.div`
   }
 `
 
-const Icon = new L.Icon({
+const IconMarker = new L.Icon({
   iconUrl: require('../../../images/marker.svg'),
   iconAnchor: null,
   popupAnchor: null,
@@ -62,7 +62,11 @@ export function Map({ gardens, fetch }) {
         <TileLayer url="https://{s}.tile.openstreetmap.se/hydda/full/{z}/{x}/{y}.png" />
 
         {gardens.map(({ latitude, longitude }) => (
-          <Marker key={v4()} icon={Icon} position={[latitude, longitude]} />
+          <Marker
+            key={v4()}
+            icon={IconMarker}
+            position={[latitude, longitude]}
+          />
         ))}
       </Mapping>
     </Container>

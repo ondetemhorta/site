@@ -18,9 +18,13 @@ const gradients = {
 export const tokens = {
   colors,
   gradients,
+  breakpoints: {
+    tablet: '786px'
+  },
   font: {
     size: {
       eighteen: rem('18px'),
+      thirtyFive: rem('35px'),
       fiftyFour: rem('54px')
     }
   },
