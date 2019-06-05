@@ -1,13 +1,22 @@
 import { firebaseDb } from '../firebase'
 
 export const model = {
-  state: {},
-  reducers: {},
+  state: {
+    data: []
+  },
+  reducers: {
+    valorize: (state, data) => ({
+      data
+    })
+  },
   effects: {
-    async save(data) {
-      const reference = firebaseDb.ref('/gardens')
+    async fetch() {
+      const query = await firebaseDb
+        .ref('gardens')
+        .once('value')
+        .then(snapshot => Object.values(snapshot.val()))
 
-      reference.push(data)
+      this.valorize(query)
     }
   }
 }

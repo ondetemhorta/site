@@ -1,12 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
 import { theme } from 'styled-tools'
-import { Map as Mapeable, TileLayer } from 'react-leaflet'
 import { Element, scroller } from 'react-scroll'
 
-import { Button } from '../components'
+import { Button } from '../../components'
 
-import logo from '../images/logo.svg'
+import logo from '../../images/logo.svg'
+import Map from './components/Map'
 
 const Header = styled.div`
   height: 100vh;
@@ -52,12 +52,7 @@ const Content = styled.div`
   margin-top: 150px;
 `
 
-const Map = styled(Mapeable)`
-  width: 100%;
-  height: 100vh;
-`
-
-export default function Home() {
+function Home() {
   const toMap = () =>
     scroller.scrollTo('map', {
       duration: 800,
@@ -67,38 +62,36 @@ export default function Home() {
 
   return (
     <>
-      <Header>
-        <Logo src={logo} />
+      <Element id="home">
+        <Header>
+          <Logo src={logo} />
 
-        <Content>
-          <About>
-            <h1 className="title">Onde tem horta?</h1>
-            <p className="description">
-              Encontre uma horta comunitária próxima a você, ou caso você
-              conheça uma horta que não está aqui, informe-nos.
-            </p>
+          <Content>
+            <About>
+              <h1 className="title">Onde tem horta?</h1>
+              <p className="description">
+                Encontre uma horta comunitária próxima a você, ou caso você
+                conheça uma horta que não está aqui, informe-nos.
+              </p>
 
-            <div className="buttons">
-              <Button className="toMap" variant="secondary" onClick={toMap}>
-                Ver hortas comunitárias
-              </Button>
-              <Button variant="flatten">
-                Conheço uma horta que não está aqui
-              </Button>
-            </div>
-          </About>
-        </Content>
-      </Header>
+              <div className="buttons">
+                <Button className="toMap" variant="secondary" onClick={toMap}>
+                  Ver hortas comunitárias
+                </Button>
+                <Button variant="flatten">
+                  Conheço uma horta que não está aqui
+                </Button>
+              </div>
+            </About>
+          </Content>
+        </Header>
+      </Element>
 
       <Element id="map">
-        <Map
-          center={{ lat: -23.421, lng: -51.9331 }}
-          zoomControl={false}
-          zoom={14}
-        >
-          <TileLayer url="https://{s}.tile.openstreetmap.se/hydda/full/{z}/{x}/{y}.png" />
-        </Map>
+        <Map />
       </Element>
     </>
   )
 }
+
+export default Home

@@ -61,7 +61,7 @@ const mapState = state => ({
 
 const mapDispatch = dispatch => ({
   login: dispatch.auth.doLogin,
-  save: garden => dispatch.gardens.save(garden)
+  save: garden => dispatch.register.save(garden)
 })
 
 Register.propTypes = {

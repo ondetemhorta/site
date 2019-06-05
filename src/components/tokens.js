@@ -24,6 +24,9 @@ export const tokens = {
       fiftyFour: rem('54px')
     }
   },
+  zindex: {
+    above: 9000
+  },
   weight: {
     light: 300,
     regular: 400,
