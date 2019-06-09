@@ -10,7 +10,10 @@ import { store } from './store'
 import { tokens } from './components'
 
 import Home from './pages/Home'
+import Gardens from './pages/Gardens'
 import Register from './pages/Register'
+
+import Header from './containers/Header'
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -21,8 +24,14 @@ const GlobalStyle = createGlobalStyle`
 
   h1,
   p,
-  button {
+  button,
+  a {
     font-family: 'Lato', sans-serif;
+  }
+
+  a {
+    color: ${tokens.colors.white};
+    text-decoration: none;
   }
 `
 
@@ -33,10 +42,13 @@ const Main = (
       <Provider store={store}>
         <PersistGate persistor={getPersistor()}>
           <BrowserRouter>
-            <Switch>
-              <Route path="/" exact component={Home} />
-              <Route path="/register" component={Register} />
-            </Switch>
+            <Header>
+              <Switch>
+                <Route path="/" exact component={Home} />
+                <Route path="/gardens" component={Gardens} />
+                <Route path="/register" component={Register} />
+              </Switch>
+            </Header>
           </BrowserRouter>
         </PersistGate>
       </Provider>

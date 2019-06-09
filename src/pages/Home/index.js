@@ -2,57 +2,35 @@ import React from 'react'
 import styled from 'styled-components'
 import media from 'styled-media-query'
 import { theme } from 'styled-tools'
-import { Element, scroller } from 'react-scroll'
+import { Link } from 'react-router-dom'
 
 import { Button } from '../../components'
 
-import logo from '../../images/logo.svg'
-import Map from './components/Map'
-
-const Header = styled.div`
-  height: 100vh;
-  padding: 0 100px;
-  position: relative;
-  display: flex;
-  background: ${theme('gradients.default')};
-
-  ${media.lessThan('medium')`
-    padding: 0 60px;
-  `}
-
-  ${media.lessThan('small')`
-    padding: 0 20px;
-  `}
-`
-
-const Logo = styled.img`
-  max-width: 140px;
-  top: 30px;
-  position: absolute;
-`
-
-const About = styled.div`
-  max-width: 470px;
+const Container = styled.div`
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
 
   .title {
-    color: ${theme('colors.white')};
     font-size: ${theme('font.size.fiftyFour')};
     font-weight: ${theme('weight.bold')};
+    color: ${theme('gradients.default')};
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
   .description {
     font-size: ${theme('font.size.eighteen')};
     font-weight: ${theme('weight.light')};
-    color: ${theme('colors.white')};
+    color: ${theme('gradients.default')};
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     margin-bottom: 40px;
-  }
-
-  .toMap {
-    display: block;
-    margin-bottom: 15px;
   }
 
   ${media.lessThan('large')`
@@ -63,10 +41,6 @@ const About = styled.div`
       margin: 0 auto;
     }
 
-    .toMap {
-      margin-bottom: 0;
-    }
-
     .buttons {
       width: 100%;
       display: flex;
@@ -75,9 +49,6 @@ const About = styled.div`
 `}
 
   ${media.lessThan('medium')`
-    .toMap {
-      margin-bottom: 30px;
-    }
 
     .title {
       font-size: ${theme('font.size.thirtyFive')};
@@ -90,52 +61,24 @@ const About = styled.div`
 `}
 `
 
-const Content = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-`
-
 function Home() {
-  const toMap = () =>
-    scroller.scrollTo('map', {
-      duration: 800,
-      delay: 0,
-      smooth: 'easeInOutQuart'
-    })
-
   return (
-    <>
-      <Element id="home">
-        <Header>
-          <Logo src={logo} />
+    <Container>
+      <h1 className="title">Onde tem horta?</h1>
+      <p className="description">
+        Encontre uma horta comunitária próxima a você, ou caso você conheça uma
+        horta que não está aqui, informe-nos.
+      </p>
 
-          <Content>
-            <About>
-              <h1 className="title">Onde tem horta?</h1>
-              <p className="description">
-                Encontre uma horta comunitária próxima a você, ou caso você
-                conheça uma horta que não está aqui, informe-nos.
-              </p>
-
-              <div className="buttons">
-                <Button className="toMap" variant="secondary" onClick={toMap}>
-                  Ver hortas comunitárias
-                </Button>
-                <Button variant="flatten">
-                  Conheço uma horta que não está aqui
-                </Button>
-              </div>
-            </About>
-          </Content>
-        </Header>
-      </Element>
-
-      <Element id="map">
-        <Map />
-      </Element>
-    </>
+      <div className="buttons">
+        <Button variant="primary">
+          <Link to="/gardens">Ver hortas comunitárias</Link>
+        </Button>
+        <Button variant="flatten">
+          <Link to="/register">Conheço uma horta que não está aqui</Link>
+        </Button>
+      </div>
+    </Container>
   )
 }
 

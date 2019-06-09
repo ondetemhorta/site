@@ -23,6 +23,7 @@ export const tokens = {
   },
   font: {
     size: {
+      fourteen: rem('14px'),
       eighteen: rem('18px'),
       thirtyFive: rem('35px'),
       fiftyFour: rem('54px')

@@ -21,9 +21,11 @@ const Content = styled.button`
       background-color: ${theme('colors.white')};
     `,
     flatten: css`
-      color: ${theme('colors.white')};
-      border: 1px solid ${theme('colors.white')};
-      background: transparent;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: ${theme('gradients.default')};
+      border: 2px solid transparent;
+      border-image: ${theme('gradients.default')} 1;
     `
   })}
 
