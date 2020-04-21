@@ -40,7 +40,7 @@ export function Map({ gardens, fetch }) {
       attributionControl={false}
       zoom={14}
     >
-      <TileLayer url="https://{s}.tile.openstreetmap.se/hydda/full/{z}/{x}/{y}.png" />
+      <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
 
       {gardens.map(({ latitude, longitude }) => (
         <Marker key={v4()} icon={IconMarker} position={[latitude, longitude]} />
@@ -57,15 +57,12 @@ Map.propTypes = {
   gardens: PropTypes.array.isRequired
 }
 
-const mapState = state => ({
+const mapState = (state) => ({
   gardens: state.gardens.data
 })
 
-const mapDispatch = dispatch => ({
+const mapDispatch = (dispatch) => ({
   fetch: dispatch.gardens.fetch
 })
 
-export default connect(
-  mapState,
-  mapDispatch
-)(Map)
+export default connect(mapState, mapDispatch)(Map)
